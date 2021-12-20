@@ -43,14 +43,16 @@ body{
 #menu ul li { 
     display: inline; 
     margin: 0 30px;
+    padding: 0 5px;
 }
 
-/*Mudar a cor dos itens no :hover*/
 
 #menu ul li:hover {
     cursor: pointer;
+    padding: 0 5px;
     background-color:#D6D6D6;
     color: #6D6D6D;
+    border-radius: 5px;
     border-bottom:3px solid #4e4e4e;
 }
 
