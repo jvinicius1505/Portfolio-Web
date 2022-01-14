@@ -56,47 +56,57 @@ body{
     border-bottom:3px solid #4e4e4e;
 }
 
-
-#projetos{
-    display: flex;
-    flex-direction: row;
-}
-
-.caixas{
-    width: 100%;
-    text-align: center;
-    margin: 25vh 2%;
-    z-index: 99;
-}
-
-#secretos{    
-    display: flex;
-    flex-direction: row;
+#nome{
     position: fixed;
-    align-content: space-between;
-    width: 100%;
+    margin-bottom: 65vh;
+    text-decoration: underline solid;
+}
+
+.link{
+    color: black;
 }
 
 .resumo{
-    width: 100%;
     text-align: center;
-    margin: 10vh 2%;
+    margin: 21vh auto 0 ;
+    width: 70%;
+}
+
+#projetos{
+    display: none;
+    margin: auto;
+    width: 50%;
+    margin-top: 15vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa{
+    width: 100%;
+    z-index: 99;
+}
+
+.setas{
+    height: 2em;
+    width: 3em;
+    cursor: pointer;
+    z-index: 99;
+    margin: 0 10px;
+    font-size: 1.3em;
+}
+
+
+#resumo{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    row-gap: 20px;
+    width: 50%;
     z-index: 1;
     font-size: 1.2em;
 }
 
-#secretos a{
-    color: black;
-    cursor: pointer;
-}
-
-.resumo h2{
-    margin-bottom: 20vh;
-    text-decoration: underline solid black;
-}
-
-
-.caixas img{
+.caixa img{
     width: 100%;
     border-radius: 15px;
     border: white 2px transparent;
@@ -180,6 +190,7 @@ body{
     display: none;
 }
 
+
 #sobre, #contato{
     width: calc(70% + 10px);
     margin: 10px auto;
@@ -193,16 +204,13 @@ body{
     animation: chegando 0.8s;
 }
 
-.projeto1:hover{
+.projeto:hover{
     animation: expandir ease 0.7s;
     animation-fill-mode: forwards;
 }
-.projeto2:hover{
-    animation: expandir ease 0.7s;
-    animation-fill-mode: forwards;
-}
-.projeto3:hover{
-    animation: expandir ease 0.7s;
+
+.projeto:not(:hover){
+    animation: voltar ease 0.5s;
     animation-fill-mode: forwards;
 }
 
@@ -256,7 +264,6 @@ body{
 @keyframes expandir{
     from{
         cursor: pointer;
-        height: 100%; 
         transform: translateZ(99);
         background-position: center;
         background-repeat: no-repeat;
@@ -265,7 +272,7 @@ body{
     }
     to{
         cursor: pointer;
-        height: 200%;
+        transform: translateY(-40%);
         transform: translateZ(1);
         background-position: center;
         background-repeat: no-repeat;
@@ -274,6 +281,37 @@ body{
     }
 }
 
-
-
-
+@keyframes voltar{
+    0%{
+        cursor: pointer;
+        transform: translateY(-40%);
+        transform: translateZ(1);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    25%{    
+        cursor: pointer;
+        transform: translateY(0%);
+        transform: translateZ(1);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    50%{ 
+        cursor: pointer;
+        transform: translateY(-20%);
+        transform: translateZ(1);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;   
+    }
+    75%{ 
+        cursor: pointer;
+        transform: translateY(0%);
+        transform: translateZ(1);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}
